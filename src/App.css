@@ -1,38 +1,199 @@
-.App {
+.info{
+  position: relative;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 0;
+}
+
+.network-fail{
+  position: fixed;
+  margin-top: 10%;
+}
+
+.card-details{
+  
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-areas: 'left right';
+  position: fixed;
+  background-color: rgb(7, 54, 54);
+  color: aliceblue;
+  margin-top: 10%;
+  border: 2px solid black;
+  border-radius: 0.4em;
+  width: 400px;
+  height: 200px;
+}
+
+.img-card-details{
+  box-sizing: border-box;
+  grid-area: img;
+  width: 95%;
+  height: 85%;
+  display: flex;
+  justify-content:space-between;
+  padding: 5px;
+  /* border-top-left-radius: 0.4em; */
+  border-radius: 10%;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.name-details{
+  grid-area: name;
+}
+
+.left{
+  display: grid;
+  grid-template-areas:
+  'img'
+  'name';
+  grid-template-rows: 80% 20%;
+  grid-template-columns: 95%;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.right{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.episodes{
+  width: 100%;
+  font-weight: 700;
+  
+}
+.episodes:hover{
+  background-color: limegreen;
+  
+}
+
+.pagina{
+  text-align: center;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  border: 1px solid black;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 138px;
+  height: 180px;
+  border: 2px solid black;
+  border-radius: 0.4em;
+}
+
+.img-card{
+  width: 125px;
+  height: 125px;
+  display: flex;
+  justify-content:space-between;
+  padding: 5px;
+  border-top-left-radius: 0.4em;
+  border-top-right-radius: 0.4em;
+  background-size: cover;
+  z-index: -1;
+}
+
+.footer-card{
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+}
+
+.status{
+  border-radius: 0.3em;
+  width: 30px;
+  height: 8px;
+  border: 1px solid black;
+}
+.status.alive{
+  background-color: lime;
+}
+.status.dead{
+  background-color: darkred;
+}
+.status.unknown{
+  background-color: darkgray;
+}
+
+.id-number{
+  width: 15px;
+  height: 15px;
+  background-color: darkslategray;
+  border-radius: 20%;
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.footer-card{
+  background-color: rgb(17, 27, 27);
+  border-bottom-left-radius: 0.4em;
+  border-bottom-right-radius: 0.4em;
+}
+
+@media (max-width: 1020px){
+  .pagina{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
   }
-  to {
-    transform: rotate(360deg);
+  .carnet{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 720px){
+  .pagina{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 40% 40%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+  .carnet{
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 515px){
+  .pagina{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+  .carnet{
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
   }
 }
